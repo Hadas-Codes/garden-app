@@ -1,9 +1,13 @@
 import React from 'react';
 
-function Flower(props) {
+function Flower({ 
+  flowerName = "פרח ברירת מחדל", 
+  petalsColor = "red", 
+  centerColor = "blow" 
+}) {
   const flowerStyle = {
-    backgroundColor: props.petalsColor,
-    color: props.centerColor,
+    backgroundColor: petalsColor,
+    color: centerColor,
     padding: '15px',
     borderRadius: '8px',
     textAlign: 'center',
@@ -13,14 +17,14 @@ function Flower(props) {
   };
 
   const handleClick = () => {
-    alert(`אני פרח מסוג ${props.flowerName}`);
+    alert(`אני פרח מסוג ${flowerName}`);
   };
 
   return (
     <div style={flowerStyle} onClick={handleClick}>
-        <h3>שם הפרח: {props.flowerName}</h3>
-        <p>צבע עלי כותרת: {props.petalsColor}</p>
-        <p>צבע עלה מרכזי: {props.centerColor}</p>
+        <h3>שם הפרח: {flowerName}</h3>
+        <p>צבע עלי כותרת: {petalsColor}</p>
+        <p>צבע עלה מרכזי: {centerColor}</p>
     </div>
   );
 }
